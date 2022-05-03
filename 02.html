@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        background-color: blanchedalmond;
+        font-size: 21px;
+        text-align: center;
+    }
+
+    #increment-count {
+        font-size: 24px;
+        border: 4px solid green;
+        border-radius: 18px;
+        color: red;
+        background-color: black;
+    }
+
+    #decrement-count {
+        font-size: 24px;
+        border: 4px solid green;
+        border-radius: 18px;
+        color: red;
+        background-color: black;
+    }
+
+    #save {
+        font-size: 24px;
+        border: 4px solid green;
+        border-radius: 18px;
+        color: red;
+        background-color: black;
+    }
+
+    #reload {
+        font-size: 24px;
+        border: 4px solid green;
+        border-radius: 18px;
+        color: red;
+        background-color: black;
+    }
+
+    h2 {
+        font-size: 40px;
+    }
+
+    p {
+        font-size: 37px;
+    }
+</style>
+
+<body>
+    <h1>Person count</h1>
+    <h2 id="count">0</h2>
+    <p id="save-el">person count :</p>
+    <button id="increment-count" onclick="increment()">INCREMENT</button>
+    <br>
+    <br>
+    <button id="decrement-count" onclick="decrement()">DECREMENT</button>
+    <br>
+    <br>
+    <button id="save" onclick="save()">SAVE</button>
+    <br>
+    <br>
+    <button id="reload" onclick="reload()">CLEAR</button>
+</body>
+<script>
+    let initial = document.getElementById("count");
+    // console.log(initial);
+    let saveEL = document.getElementById('save-el')
+    let Message = document.getElementById('message')
+    let Clear = document.getElementById('clear')
+    let count = 0;
+    function increment() {
+        count = count + 1;
+        initial.innerText = count
+        // console.log(count)
+    }
+
+    function decrement() {
+        count = count - 1;
+        initial.innerText = count;
+        // console.log(count)
+    }
+    function save() {
+        let countstr = count + " - "
+        saveEL.textContent += countstr;
+        initial.textContent = 0;
+        count = 0;
+    }
+    function reload() {
+        location.reload();
+    }
+
+</script>
+
+</html>
